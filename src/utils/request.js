@@ -36,7 +36,7 @@ export default function ajax(url, data = {}, method = 'GET', isQueryParams = 0, 
 
             //response.data是业务数据的开始节点
             let code = response.data.code;
-            if(code == 1004) {
+            if(code == 1004) {//未登录
                 router.push({path: '/'})
             } else if(code != 1000) {
                 Message({
@@ -44,6 +44,7 @@ export default function ajax(url, data = {}, method = 'GET', isQueryParams = 0, 
                     type: 'error',
                     duration: 2000
                 })
+                reject(code)
             } else {
                 resolve(response.data)
             }

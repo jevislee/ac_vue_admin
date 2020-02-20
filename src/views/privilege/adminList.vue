@@ -78,6 +78,7 @@
 <script>
     import { mapGetters } from 'vuex'
     import {queryAllAdmins, addAdmin, modifyAdmin, deleteAdmin} from '@/api/privilege'
+    import { Message } from 'element-ui'
     export default {
         data () {
             return {
@@ -121,6 +122,16 @@
                 }
             },
             handleEdit () {
+                if (!this.editInfo.name || this.editInfo.name.length < 5) {
+                    Message({message: '用户名不能小于5个字符',type: 'error',duration: 2000})
+                    return
+                }
+
+                if (!this.editInfo.pswd || this.editInfo.pswd.length < 5) {
+                    Message({message: '密码不能小于5个字符',type: 'error',duration: 2000})
+                    return
+                }
+
                 if(this.editInfo.id == -1) {
                    addAdmin({
                         name: this.editInfo.name,

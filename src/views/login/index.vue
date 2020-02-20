@@ -38,14 +38,14 @@
         data () {
             const validateUsername = (rule, value, callback) => {
                 if (value.length < 5) {
-                    callback(new Error('请输入正确的用户名'))
+                    callback(new Error('用户名不能小于5个字符'))
                 } else {
                     callback()
                 }
             }
             const validatePass = (rule, value, callback) => {
                 if (value.length < 5) {
-                    callback(new Error('密码不能小于5位'))
+                    callback(new Error('密码不能小于5个字符'))
                 } else {
                     callback()
                 }
