@@ -9,10 +9,10 @@
             <el-table-column align="center" prop="name" label="名称"></el-table-column>
             <el-table-column align="center" label="操作" width="300">
                 <template slot-scope="scope">
-                    <el-button v-if="apiPermNames.indexOf('/modifyRole') > -1" size="mini" type="primary" @click="openEditDialog(scope.row)" style="margin-left:10px">编辑</el-button>
-                    <el-button v-if="apiPermNames.indexOf('/deleteRole') > -1" size="mini" type="primary" @click="openDeleteDialog(scope.row.id)" style="margin-left:10px">删除</el-button>
-                    <el-button v-if="apiPermNames.indexOf('/queryApiForRole') > -1" size="mini" type="success" @click="toRoleApiList(scope.row)" style="margin-left:10px">API配置</el-button>
-                    <el-button v-if="apiPermNames.indexOf('/queryMenuForRole') > -1" size="mini" type="success" @click="toRoleMenuList(scope.row)" style="margin-left:10px">菜单配置</el-button>
+                    <el-button v-if="apiPermNames.indexOf('/api/ac/modifyRole') > -1" size="mini" type="primary" @click="openEditDialog(scope.row)" style="margin-left:10px">编辑</el-button>
+                    <el-button v-if="apiPermNames.indexOf('/api/ac/deleteRole') > -1" size="mini" type="primary" @click="openDeleteDialog(scope.row.id)" style="margin-left:10px">删除</el-button>
+                    <el-button v-if="apiPermNames.indexOf('/api/ac/queryApiForRole') > -1" size="mini" type="success" @click="toRoleApiList(scope.row)" style="margin-left:10px">API配置</el-button>
+                    <el-button v-if="apiPermNames.indexOf('/api/ac/queryMenuForRole') > -1" size="mini" type="success" @click="toRoleMenuList(scope.row)" style="margin-left:10px">菜单配置</el-button>
                 </template>
             </el-table-column>
         </el-table>

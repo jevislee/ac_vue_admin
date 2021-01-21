@@ -2,7 +2,7 @@ import ajax from "@/utils/request";
 
 export function login(username, password) {
     return ajax(
-        '/admin/login',
+        '/api/ac/admin/login',
         {
          'name': username,
          'pswd': password
@@ -11,5 +11,5 @@ export function login(username, password) {
 }
 
 export function logout() {
-    return ajax('/logout',{},'POST')
+    return ajax('/api/ac/logout',{},'POST')
 }

@@ -21,8 +21,8 @@
             <el-table-column align="center" prop="orderNo" label="排序"></el-table-column>
             <el-table-column align="center" label="操作" width="160">
                 <template slot-scope="scope">
-                    <el-button v-if="scope.row.roleMenuId == null && apiPermNames.indexOf('/addRolePrivilege') > -1" size="mini" type="success" @click="addThisPrivilegeToRole(scope.row)">增加权限</el-button>
-                    <el-button v-if="scope.row.roleMenuId != null && apiPermNames.indexOf('/deleteRolePrivilege') > -1" size="mini" type="danger" @click="delThisPrivilegeFromRole(scope.row)">移除权限</el-button>
+                    <el-button v-if="scope.row.roleMenuId == null && apiPermNames.indexOf('/api/ac/addRolePrivilege') > -1" size="mini" type="success" @click="addThisPrivilegeToRole(scope.row)">增加权限</el-button>
+                    <el-button v-if="scope.row.roleMenuId != null && apiPermNames.indexOf('/api/ac/deleteRolePrivilege') > -1" size="mini" type="danger" @click="delThisPrivilegeFromRole(scope.row)">移除权限</el-button>
                 </template>
             </el-table-column>
         </el-table>

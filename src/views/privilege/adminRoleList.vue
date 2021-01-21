@@ -8,8 +8,8 @@
             <el-table-column align="center" prop="name" label="角色"></el-table-column>
             <el-table-column align="center" label="操作" width="160">
                 <template slot-scope="scope">
-                    <el-button v-if="scope.row.adminRoleId == null && apiPermNames.indexOf('/addAdminRole') > -1" size="mini" type="success" @click="addThisRoleToAdmin(scope.row)">增加角色</el-button>
-                    <el-button v-if="scope.row.adminRoleId != null && apiPermNames.indexOf('/deleteAdminRole') > -1" size="mini" type="danger" @click="delThisRoleFromAdmin(scope.row)">移除角色</el-button>
+                    <el-button v-if="scope.row.adminRoleId == null && apiPermNames.indexOf('/api/ac/addAdminRole') > -1" size="mini" type="success" @click="addThisRoleToAdmin(scope.row)">增加角色</el-button>
+                    <el-button v-if="scope.row.adminRoleId != null && apiPermNames.indexOf('/api/ac/deleteAdminRole') > -1" size="mini" type="danger" @click="delThisRoleFromAdmin(scope.row)">移除角色</el-button>
                 </template>
             </el-table-column>
         </el-table>

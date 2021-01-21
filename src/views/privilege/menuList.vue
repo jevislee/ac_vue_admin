@@ -22,8 +22,8 @@
             <el-table-column align="center" prop="orderNo" label="排序"></el-table-column>
             <el-table-column align="center" label="操作" width="240">
                 <template slot-scope="scope">
-                    <el-button v-if="apiPermNames.indexOf('/modifyMenu') > -1" size="mini" type="primary" @click="openEditDialog(scope.row)" style="margin-left:10px">编辑</el-button>
-                    <el-button v-if="apiPermNames.indexOf('/deleteMenu') > -1" size="mini" type="primary" @click="openDeleteDialog(scope.row.id)" style="margin-left:10px">删除</el-button>
+                    <el-button v-if="apiPermNames.indexOf('/api/ac/modifyMenu') > -1" size="mini" type="primary" @click="openEditDialog(scope.row)" style="margin-left:10px">编辑</el-button>
+                    <el-button v-if="apiPermNames.indexOf('/api/ac/deleteMenu') > -1" size="mini" type="primary" @click="openDeleteDialog(scope.row.id)" style="margin-left:10px">删除</el-button>
                 </template>
             </el-table-column>
         </el-table>

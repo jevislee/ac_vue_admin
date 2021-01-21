@@ -22,9 +22,9 @@
                     <el-button size="mini" type="success" @click="toAdminRoleList(scope.row)" style="margin-left:10px">角色配置</el-button>
                 </template>
                 <template v-if="scope.row.name != 'admin'" slot-scope="scope">
-                    <el-button v-if="apiPermNames.indexOf('/modifyAdmin') > -1" size="mini" type="primary" @click="openEditDialog(scope.row)" style="margin-left:10px">编辑</el-button>
-                    <el-button v-if="apiPermNames.indexOf('/deleteAdmin') > -1" size="mini" type="primary" @click="openDeleteDialog(scope.row.id)" style="margin-left:10px">删除</el-button>
-                    <el-button v-if="apiPermNames.indexOf('/queryRoleForAdmin') > -1" size="mini" type="success" @click="toAdminRoleList(scope.row)" style="margin-left:10px">角色配置</el-button>
+                    <el-button v-if="apiPermNames.indexOf('/api/ac/modifyAdmin') > -1" size="mini" type="primary" @click="openEditDialog(scope.row)" style="margin-left:10px">编辑</el-button>
+                    <el-button v-if="apiPermNames.indexOf('/api/ac/deleteAdmin') > -1" size="mini" type="primary" @click="openDeleteDialog(scope.row.id)" style="margin-left:10px">删除</el-button>
+                    <el-button v-if="apiPermNames.indexOf('/api/ac/queryRoleForAdmin') > -1" size="mini" type="success" @click="toAdminRoleList(scope.row)" style="margin-left:10px">角色配置</el-button>
                 </template>
             </el-table-column>
         </el-table>

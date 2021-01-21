@@ -1,124 +1,124 @@
 import ajax from '@/utils/request'
 
 export function queryAllApi(data) {
-    return ajax('/queryAllApi', data)
+    return ajax('/api/ac/queryAllApi', data)
 }
 
 export function autoRegisterApi() {
-    return ajax('/autoRegisterApi')
+    return ajax('/api/ac/autoRegisterApi')
 }
 
 export function modifyApi(data) {
-    return ajax('/modifyApi', data, 'POST')
+    return ajax('/api/ac/modifyApi', data, 'POST')
 }
 
 export function moveApiToExcluded(data) {
-    return ajax('/moveApiToExcluded', data, 'POST', 1)
+    return ajax('/api/ac/moveApiToExcluded', data, 'POST', 1)
 }
 
 
 export function queryAllExcludedApi(data) {
-    return ajax('/queryExcludedApi', data)
+    return ajax('/api/ac/queryExcludedApi', data)
 }
 
 export function deleteExcludedApi(data) {
-    return ajax('/deleteExcludedApi', data, 'POST', 1)
+    return ajax('/api/ac/deleteExcludedApi', data, 'POST', 1)
 }
 
 
 export function queryAllRoles(data) {
-    return ajax('/queryAllRoles', data)
+    return ajax('/api/ac/queryAllRoles', data)
 }
 
 export function addRole(data) {
-    return ajax('/addRole', data, 'POST')
+    return ajax('/api/ac/addRole', data, 'POST')
 }
 
 export function modifyRole(data) {
-    return ajax('/modifyRole', data, 'POST')
+    return ajax('/api/ac/modifyRole', data, 'POST')
 }
 
 export function deleteRole(data) {
-    return ajax('/deleteRole', data, 'POST', 1)
+    return ajax('/api/ac/deleteRole', data, 'POST', 1)
 }
 
 
 export function queryApiForRole(data) {
-    return ajax('/queryApiForRole', data)
+    return ajax('/api/ac/queryApiForRole', data)
 }
 
 export function addRolePrivilege(data) {
-    return ajax('/addRolePrivilege', data, 'POST', 1)
+    return ajax('/api/ac/addRolePrivilege', data, 'POST', 1)
 }
 
 export function deleteRolePrivilege(data) {
-    return ajax('/deleteRolePrivilege', data, 'POST', 1)
+    return ajax('/api/ac/deleteRolePrivilege', data, 'POST', 1)
 }
 
 
 
 export function queryAllAdmins(data) {
-    return ajax('/queryAllAdmins', data)
+    return ajax('/api/ac/queryAllAdmins', data)
 }
 
 export function addAdmin(data) {
-    return ajax('/addAdmin', data, 'POST')
+    return ajax('/api/ac/addAdmin', data, 'POST')
 }
 
 export function modifyAdmin(data) {
-    return ajax('/modifyAdmin', data, 'POST')
+    return ajax('/api/ac/modifyAdmin', data, 'POST')
 }
 
 export function deleteAdmin(data) {
-    return ajax('/deleteAdmin', data, 'POST', 1)
+    return ajax('/api/ac/deleteAdmin', data, 'POST', 1)
 }
 
 
 export function queryRoleForAdmin(data) {
-    return ajax('/queryRoleForAdmin', data)
+    return ajax('/api/ac/queryRoleForAdmin', data)
 }
 
 export function addAdminRole(data) {
-    return ajax('/addAdminRole', data, 'POST', 1)
+    return ajax('/api/ac/addAdminRole', data, 'POST', 1)
 }
 
 export function deleteAdminRole(data) {
-    return ajax('/deleteAdminRole', data, 'POST', 1)
+    return ajax('/api/ac/deleteAdminRole', data, 'POST', 1)
 }
 
 
 export function queryAllMenu(data) {
-    return ajax('/queryAllMenu', data)
+    return ajax('/api/ac/queryAllMenu', data)
 }
 
 export function addMenu(data) {
-    return ajax('/addMenu', data, 'POST')
+    return ajax('/api/ac/addMenu', data, 'POST')
 }
 
 export function modifyMenu(data) {
-    return ajax('/modifyMenu', data, 'POST')
+    return ajax('/api/ac/modifyMenu', data, 'POST')
 }
 
 export function deleteMenu(data) {
-    return ajax('/deleteMenu', data, 'POST', 1)
+    return ajax('/api/ac/deleteMenu', data, 'POST', 1)
 }
 
 export function queryMenuForRole(data) {
-    return ajax('/queryMenuForRole', data)
+    return ajax('/api/ac/queryMenuForRole', data)
 }
 
 export function queryApiPermNames() {
-    return ajax('/admin/queryApiPermNames')
+    return ajax('/api/ac/admin/queryApiPermNames')
 }
 
 export function queryRoleNames() {
-    return ajax('/admin/queryRoleNames')
+    return ajax('/api/ac/admin/queryRoleNames')
 }
 
 export function queryMenuTree() {
-    return ajax('/queryMenuTree')
+    return ajax('/api/ac/queryMenuTree')
 }
 
 export function queryTopLevelMenu() {
-    return ajax('/queryTopLevelMenu')
+    return ajax('/api/ac/queryTopLevelMenu')
 }

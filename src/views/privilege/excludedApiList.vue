@@ -5,7 +5,7 @@
             <el-table-column align="center" prop="uri" label="路径"></el-table-column>
             <el-table-column align="center" label="操作" width="160">
                 <template slot-scope="scope">
-                    <el-button v-if="apiPermNames.indexOf('/deleteExcludedApi') > -1" size="mini" type="primary" @click="openDeleteDialog(scope.row.id)" style="margin-left:10px">删除</el-button>
+                    <el-button v-if="apiPermNames.indexOf('/api/ac/deleteExcludedApi') > -1" size="mini" type="primary" @click="openDeleteDialog(scope.row.id)" style="margin-left:10px">删除</el-button>
                 </template>
             </el-table-column>
         </el-table>

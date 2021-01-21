@@ -13,8 +13,8 @@
             <el-table-column align="center" prop="title" label="标题"></el-table-column>
             <el-table-column align="center" label="操作" width="160">
                 <template slot-scope="scope">
-                    <el-button v-if="apiPermNames.indexOf('/modifyApi') > -1" size="mini" type="primary" @click="openEditDialog(scope.row)" style="margin-left:10px">编辑</el-button>
-                    <el-button v-if="apiPermNames.indexOf('/moveApiToExcluded') > -1" size="mini" type="primary" @click="openDeleteDialog(scope.row.id)" style="margin-left:10px">排除</el-button>
+                    <el-button v-if="apiPermNames.indexOf('/api/ac/modifyApi') > -1" size="mini" type="primary" @click="openEditDialog(scope.row)" style="margin-left:10px">编辑</el-button>
+                    <el-button v-if="apiPermNames.indexOf('/api/ac/moveApiToExcluded') > -1" size="mini" type="primary" @click="openDeleteDialog(scope.row.id)" style="margin-left:10px">排除</el-button>
                 </template>
             </el-table-column>
         </el-table>

@@ -1,11 +1,9 @@
 import { login, logout } from '@/api/login'
-import { getToken, setToken, removeToken } from '@/utils/auth'
 import { queryApiPermNames, queryRoleNames } from '@/api/privilege'
 import router from '@/router/index.js'
 
 const user = {
   state: {
-    token: getToken(),
     name: '',
     avatar: '',
     roles: [],
@@ -13,9 +11,6 @@ const user = {
   },
 
   mutations: {
-    SET_TOKEN: (state, token) => {
-      state.token = token
-    },
     SET_NAME: (state, name) => {
       state.name = name
     },
@@ -37,8 +32,6 @@ const user = {
       return new Promise((resolve, reject) => {
         login(username, userInfo.password).then(response => {
           const data = response.data
-          setToken(data.token)
-          commit('SET_TOKEN', data.token)
           commit('SET_NAME', data.name)
 
           queryApiPermNames().then(res => {
@@ -59,14 +52,13 @@ const user = {
     },
 
     // 登出
-    LogOut({ commit, state }) {
+    LogOut({ commit }) {
       return new Promise((resolve, reject) => {
-        logout(state.token).then(() => {
-          commit('SET_TOKEN', '')
+        logout().then(() => {
           commit('SET_NAME', '')
           commit('SET_ROLES', [])
           commit('SET_API_PERM_NAMES', [])
-          removeToken()
+          window.localStorage.removeItem('token')
           router.push({path: '/'})
         }).catch(error => {
           reject(error)
