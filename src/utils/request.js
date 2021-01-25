@@ -1,5 +1,6 @@
 import axios from 'axios'
 import router from '@/router/index.js'
+import { decryptByDES } from "@/utils/des.js"
 import { Message } from 'element-ui'
 import qs from 'qs';
 
@@ -11,9 +12,9 @@ export default function ajax(url, data = {}, method = 'GET', isQueryParams = 0, 
 
         if (token == null) {
             _ajax('/api/ac/anonToken').then(res => {
-
-                console.log('token:' + res.data)
-                window.localStorage.setItem('token', res.data);
+                let desToken = res.data
+                let token = decryptByDES(desToken)
+                window.localStorage.setItem('token', token);
 
                 _ajax(url, data, method, isQueryParams, contentType).then(res => {
                     resolve(res)
@@ -29,9 +30,9 @@ export default function ajax(url, data = {}, method = 'GET', isQueryParams = 0, 
                 // rejected
                 if (error == 1006) {
                     _ajax('/api/ac/anonToken').then(res => {
-
-                        console.log('token:' + res.data)
-                        window.localStorage.setItem('token', res.data);
+                        let desToken = res.data
+                        let token = decryptByDES(desToken)
+                        window.localStorage.setItem('token', token);
 
                         _ajax(url, data, method, isQueryParams, contentType).then(res => {
                             resolve(res)
